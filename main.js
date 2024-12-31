@@ -17,7 +17,7 @@ rl.question('Enter the filename: ', (filename) => {
         console.log(err)
         return;
       }
-      const regex = new RegExp(`\\b${word}\\b`, 'g');
+      const regex = new RegExp(`\\b${word}\\b`, 'gi');
       const updatedContent = data.toString().replace(regex, '');
       fs.writeFile(filePath, updatedContent, (err)=>{
         if(err){
